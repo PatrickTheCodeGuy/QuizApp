@@ -13,7 +13,7 @@
 
 .button-start{
     width: 30%;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Lobster', cursive;
     height: 12%;
     background: linear-gradient(-42deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -21,7 +21,7 @@
     margin-top: 5%;
     color: white;
     border: none;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: 600;
     transition: background-color 0.1s ease;
 }
