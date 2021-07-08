@@ -12,8 +12,6 @@ class StartMenu extends React.Component {
         return (
             <div class="menu-container">
                 <h1 class="menu-text">Quizania!</h1>
-                <p>A quiz game, try and get the highest score!</p>
-                <button>Start</button>
             </div>
         )
     }
