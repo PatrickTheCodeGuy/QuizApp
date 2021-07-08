@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import GameInfo from './components/GameInfo/GameInfo';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
@@ -14,11 +13,8 @@ import {
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-          <Switch>
-              <Route exact path="/" component={App}/>
-              <Route path="/newGame" component={GameInfo}/>
-          </Switch>   
-      </Router>
+        <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

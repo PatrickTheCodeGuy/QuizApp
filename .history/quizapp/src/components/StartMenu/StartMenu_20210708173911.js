@@ -1,7 +1,13 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import './StartMenu.css';
-import { Link } from 'react-router-dom';
 
+const history = useHistory();
+
+  const routeChange = () =>{ 
+    let path = `/newGame`; 
+    history.push(path);
+  }
 
 class StartMenu extends React.Component {
     constructor(props){
@@ -15,7 +21,7 @@ class StartMenu extends React.Component {
             <div class="menu-container">
                 <h1 class="menu-text">Quizania</h1>
                 <p class="regular-text">A quiz game, try and get the highest score!</p>
-                <Link to='/newGame' class="button-start">Start</Link>
+                <button onClick={routeChange} class="button-start">Start</button>
             </div>
         )
     }

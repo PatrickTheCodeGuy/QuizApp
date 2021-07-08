@@ -2,23 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import GameInfo from './components/GameInfo/GameInfo';
 import reportWebVitals from './reportWebVitals';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-          <Switch>
-              <Route exact path="/" component={App}/>
-              <Route path="/newGame" component={GameInfo}/>
-          </Switch>   
-      </Router>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

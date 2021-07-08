@@ -15,7 +15,7 @@ class StartMenu extends React.Component {
             <div class="menu-container">
                 <h1 class="menu-text">Quizania</h1>
                 <p class="regular-text">A quiz game, try and get the highest score!</p>
-                <Link to='/newGame' class="button-start">Start</Link>
+                <Link href='/newGame' class="button-start">Start</Link>
             </div>
         )
     }

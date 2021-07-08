@@ -1,6 +1,5 @@
 import React from 'react';
 import './StartMenu.css';
-import { Link } from 'react-router-dom';
 
 
 class StartMenu extends React.Component {
@@ -15,7 +14,7 @@ class StartMenu extends React.Component {
             <div class="menu-container">
                 <h1 class="menu-text">Quizania</h1>
                 <p class="regular-text">A quiz game, try and get the highest score!</p>
-                <Link to='/newGame' class="button-start">Start</Link>
+                <button class="button-start">Start</button>
             </div>
         )
     }

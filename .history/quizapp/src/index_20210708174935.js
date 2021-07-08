@@ -14,11 +14,9 @@ import {
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-          <Switch>
-              <Route exact path="/" component={App}/>
-              <Route path="/newGame" component={GameInfo}/>
-          </Switch>   
-      </Router>
+        <Route path="/" component={App}/>
+        <Route path="/newGame" component={GameInfo}/>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
