@@ -14,7 +14,3 @@ code {
 html, body, #app, #app>div {
   height: 100%
 }
-
-#root{
-  display:flex;
-}

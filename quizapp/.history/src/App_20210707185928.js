@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Leaderboard from './components/Leaderboard/Leaderboard';
-import StartMenu from './components/StartMenu/StartMenu';
+import Leaderboard from './components/Leaderboard';
 
 
 function App() {
@@ -10,9 +9,7 @@ function App() {
           <div class="leaderboard-container">
             <Leaderboard/>
           </div>
-          <div class="game-container">
-            <StartMenu/>
-          </div>
+          <div class="game-container">Options 2</div>
     </div>
   );
 }

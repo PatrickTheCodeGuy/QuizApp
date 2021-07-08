@@ -1,0 +1,10 @@
+.menu-text{
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-size: 8em;
+    letter-spacing: 0.08em;
+}
+
+.menu-container{
+    border: 1px solid black;
+    text-align: center;
+}

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Leaderboard from './components/Leaderboard/Leaderboard';
-import StartMenu from './components/StartMenu/StartMenu';
+import Leaderboard from './components/Leaderboard';
+import StartMenu from './components/StartMenu';
 
 
 function App() {
