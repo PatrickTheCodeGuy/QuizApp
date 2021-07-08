@@ -7,7 +7,6 @@
 .regular-text{
     font-family:fantasy;
     font-weight:900;
-    font-size: 1.4em;
 }
 
 .button-start{
@@ -19,13 +18,12 @@
     border: 3px solid green;
     font-size: xx-large;
     font-weight: 600;
-    transition: background-color 0.1s ease;
 }
 
 .button-start:hover{
-    background: rgba(4, 255, 4, 0.311);
+    background: white;
     color: black;
-    border: 3px solid rgba(0, 188, 0, 0.743);
+    transition: background-color 1s ease
 }
 
 .menu-container{

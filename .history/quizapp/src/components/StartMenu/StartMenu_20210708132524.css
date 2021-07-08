@@ -1,0 +1,19 @@
+.menu-text{
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-size: 8em;
+    letter-spacing: 0.08em;
+}
+
+.regular-text{
+    font-family:fantasy;
+}
+
+.menu-container{
+    border: 6px groove black;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 12px 25px -8px #000000;
+    width: 45em;
+    height: 33em;
+    margin: 20% 15%;
+}
