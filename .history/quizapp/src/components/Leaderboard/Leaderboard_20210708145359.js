@@ -1,5 +1,4 @@
 import React from 'react';
-import './Leaderboard.css';
 
 class Leaderboard extends React.Component {
     constructor(props){
@@ -11,8 +10,7 @@ class Leaderboard extends React.Component {
     render(){
         return (
             <div>
-                <h1 class="hi-score-text"> Hi Scores</h1>
-                <hr class="rounded"/>
+                <h1> Hi Scores</h1>
             </div>
         )
     }

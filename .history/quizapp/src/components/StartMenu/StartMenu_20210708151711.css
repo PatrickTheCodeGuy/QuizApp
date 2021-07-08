@@ -35,6 +35,7 @@
 .button-start:active {
     border: 2px solid rgba(0, 0, 0, 0.564);
     background: white;
+    width: 32%;
     color: rgb(43, 43, 43);
     transform: translateY(4px);
 }

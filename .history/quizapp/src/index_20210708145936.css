@@ -20,9 +20,8 @@ html, body, #app, #app>div {
 }
 
 hr.rounded {
-  border-top: 5px solid black;
-    border-radius: 1px;
-    width: 55%;
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
 }
 
 #root{

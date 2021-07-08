@@ -14,27 +14,25 @@
 .button-start{
     width: 30%;
     height: 12%;
-    background: linear-gradient(-42deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 13s ease infinite;
+    background: green;
     margin-top: 5%;
     color: white;
-    border: none;
+    border: 3px solid green;
     font-size: xx-large;
     font-weight: 600;
     transition: background-color 0.1s ease;
 }
 
 .button-start:hover{
-    background: linear-gradient(-42deg, #a45137, #91254e, #15607b, #158268);
-    background-size: 400% 400%;
-    animation: gradient 13s ease infinite;
+    background: rgba(4, 255, 4, 0.311);
     color: black;
+    border: 3px solid rgba(0, 188, 0, 0.743);
 }
 
 .button-start:active {
-    border: 2px solid rgba(0, 0, 0, 0.564);
-    background: white;
+    box-shadow: 0 5px #666;
+    background: rgba(17, 91, 17, 0.66);
+    width: 32%;
     color: rgb(43, 43, 43);
     transform: translateY(4px);
 }
