@@ -11,17 +11,11 @@
 .back-button {
     margin-left: 2%;
     margin-top: 2%;
-    color: rgb(2, 202, 247);
+    color: darkcyan;
 }
 
 .back-button:hover {
     color: rgba(40, 232, 232, 0.749);
-}
-
-.modal-button{
-    border: none;
-    width: 30px;
-    height: 45px;
 }
 
 .gameInfo-header{

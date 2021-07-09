@@ -19,7 +19,7 @@ function GameInfo() {
                 <Link className="back-button" to="/">
 																		<ImArrowLeft size={64} className="back-arrow"/>
 																</Link>
-																<button class="modal-button"onClick={() => setModalIsOpen(true)}>
+																<button onClick={() => setModalIsOpen(true)}>
 																	<ImInfo className="info-icon"/>
 																</button>
 																<Modal onRequestClose={() => setModalIsOpen(false)} isOpen={modalIsOpen}>

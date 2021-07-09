@@ -8,26 +8,25 @@ import Modal from 'react-modal';
  
 
 function GameInfo() {
-	// Fix for screen readers getting an error on modal mount
-	Modal.setAppElement('#root');
 
-	// Modal hook
+		Modal.setAppElement('#root')
 	const [modalIsOpen, setModalIsOpen] = useState(false);
     return(
-        <div className="gameInfo-container">
-            <div className="gameInfo-header">
-                <Link className="back-button" to="/">
-																		<ImArrowLeft size={64} className="back-arrow"/>
+        <div class="gameInfo-container">
+            <div class="gameInfo-header">
+                <Link to="/">
+																		<ImArrowLeft class="back-arrow"/>
 																</Link>
-																<button class="modal-button"onClick={() => setModalIsOpen(true)}>
-																	<ImInfo className="info-icon"/>
+																<button onClick={() => setModalIsOpen(true)}>
+																	<ImInfo class="info-icon"/>
 																</button>
 																<Modal onRequestClose={() => setModalIsOpen(false)} isOpen={modalIsOpen}>
 																		<h1>Modal is Open</h1>
 																</Modal>
             </div>
-            <div className="gameInfo-body">
-																
+            <div class="gameInfo-body">
+																<h1 class="menu-text">Quizania</h1>
+                <p class="regular-text">A quiz game, try and get the highest score!</p>
             </div>
 												
 												</div>
