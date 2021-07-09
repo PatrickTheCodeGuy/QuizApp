@@ -1,16 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
-// Component Imports
 import App from './App';
 import GameInfo from './components/GameInfo/GameInfo';
 import QuestionContainer from './components/QuestionContainer/QuestionContainer';
-
-//Web vital import
 import reportWebVitals from './reportWebVitals';
-
-// Library Imports
 import {
   BrowserRouter as Router,
   Switch,
