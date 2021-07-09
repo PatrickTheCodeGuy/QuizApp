@@ -27,7 +27,6 @@
     margin-top: 3%;
     background:white;
     color: black;
-    cursor: pointer;
 }
 
 .rules-text{
@@ -35,7 +34,6 @@
     font-size: 2.5em;
     letter-spacing: 0.09em;
     margin-top: 0%;
-    cursor:default;
 }
 
 .info {
@@ -43,13 +41,9 @@
     font-size: 1.1em;
     font-weight: 200;
     margin: 20px auto;
-    width: 70%;
-    
 }
 
 .warning {
-    width: 80%;
-    margin: 40px auto 80px;
     font-weight: bolder;
     font-family: 'Press Start 2P', cursive;
 }

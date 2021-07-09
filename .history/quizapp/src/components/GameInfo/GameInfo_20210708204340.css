@@ -27,7 +27,6 @@
     margin-top: 3%;
     background:white;
     color: black;
-    cursor: pointer;
 }
 
 .rules-text{
@@ -35,7 +34,7 @@
     font-size: 2.5em;
     letter-spacing: 0.09em;
     margin-top: 0%;
-    cursor:default;
+    cursor:none;
 }
 
 .info {
@@ -44,7 +43,6 @@
     font-weight: 200;
     margin: 20px auto;
     width: 70%;
-    
 }
 
 .warning {

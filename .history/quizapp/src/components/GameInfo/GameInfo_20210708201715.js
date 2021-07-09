@@ -27,15 +27,8 @@ function GameInfo() {
 																</Modal>
             </div>
             <div className="gameInfo-body">
-																<h5 class="rules-text">Rules</h5>
+																
             </div>
-												<div>
-														<p class="regular-text info">Welcome to Quizania!</p>
-														<p class="regular-text info">The rules are simple: Answer the question in the alloted time.</p>
-														<p class="regular-text info">If you select the correct answer you get points! Try to get as many as you can until you cant anymore.</p>
-													<p class="regular-text warning">IMPORTANT: DO NOT LEAVE THE TAB OR YOU WILL AUTOMATICALLY FAIL!</p>
-													<Link to='/newGame' class="button-start">Go</Link>
-												</div>
 												
 												</div>
     )

@@ -1,0 +1,37 @@
+.gameInfo-container{
+    border: 6px groove black;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 12px 25px -8px #000000;
+    width: 45em;
+    height: 33em;
+    margin: 10% auto;
+}
+
+.back-button {
+    margin-left: 2%;
+    margin-top: 2%;
+    color: rgb(2, 202, 247);
+}
+
+.back-button:hover {
+    color: rgba(40, 232, 232, 0.749);
+}
+
+.modal-button{
+    border: none;
+    width: 45px;
+    height: 45px;
+    margin-right: 3%;
+    margin-top: 3%;
+    background:white;
+}
+
+.modal-button:hover {
+    background: rgba(205, 205, 205, 0.681);
+}
+
+.gameInfo-header{
+    display: flex;
+    justify-content: space-between;
+}

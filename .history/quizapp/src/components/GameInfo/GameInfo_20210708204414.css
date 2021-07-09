@@ -27,7 +27,6 @@
     margin-top: 3%;
     background:white;
     color: black;
-    cursor: pointer;
 }
 
 .rules-text{
@@ -44,7 +43,6 @@
     font-weight: 200;
     margin: 20px auto;
     width: 70%;
-    
 }
 
 .warning {
