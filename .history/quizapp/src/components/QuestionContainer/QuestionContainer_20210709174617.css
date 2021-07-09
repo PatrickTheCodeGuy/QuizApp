@@ -2,6 +2,7 @@
 
 .question-container {
     font-family: 'Press Start 2P', cursive;
+    font-size: 1.1em;
     border: 6px groove black;
     text-align: center;
     background-color: white;

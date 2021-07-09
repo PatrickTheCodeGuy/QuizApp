@@ -11,7 +11,7 @@ function QuestionComponent(props) {
     return (
         <div>
             <div className="question-text">{props.question.question}</div>
-            <div className="answers-button-container">
+            <div>
                 {answers.map(answer => { return <button>{answer}</button>
                 })}
             </div>

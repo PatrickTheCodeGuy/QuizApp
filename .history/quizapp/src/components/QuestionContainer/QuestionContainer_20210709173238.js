@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './QuestionContainer.css';
 import QuestionComponent from './QuestionComponent/QuestionComponent';
 
 function QuestionContainer() {
@@ -17,18 +16,18 @@ function QuestionContainer() {
           setQuestions(results);
           setIsLoaded(true)
           
-    }, []);
+    }, [questions]);
     
 
     // TODO: Add new component to render out questions.
     
     return(
-            <div className="question-container">
+            <div>
             {isLoaded ? <QuestionComponent
                     totalQuestions={currentIndex + 1}
-                    question={questions[currentIndex]}
-                    answer={questions[currentIndex]['correct_answer']}
-                    incorrect={questions[currentIndex]['incorrect_answers']}
+                    question={questions[0].question}
+                    correctAnswer={questions[0]['correct_answer']}
+                    incorrectAnswers={questions[0]['incorrect_answers']}
                  /> : <h1>Please wait...</h1>}
                 
             </div>

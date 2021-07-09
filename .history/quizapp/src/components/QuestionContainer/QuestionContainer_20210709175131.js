@@ -28,7 +28,7 @@ function QuestionContainer() {
                     totalQuestions={currentIndex + 1}
                     question={questions[currentIndex]}
                     answer={questions[currentIndex]['correct_answer']}
-                    incorrect={questions[currentIndex]['incorrect_answers']}
+                    incorrect={questions[currentIndex]['incorrect_answer']}
                  /> : <h1>Please wait...</h1>}
                 
             </div>
