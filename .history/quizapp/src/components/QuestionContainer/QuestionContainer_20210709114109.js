@@ -12,23 +12,21 @@ function QuestionContainer() {
           const data = await response.json();
           const results = data.results
           setQuestions(results);
+          console.log('questions: ', results)
     }, []);
-
-    // TODO: add function to calculate score
-
-    // TODO: add logic to end game.
+    
 
     // TODO: Add new component to render out questions.
     
     return(
             <div>
             hello!
-                <QuestionComponent
+                {/* <QuestionComponent
                     totalQuestions={currentIndex + 1}
                     question={questions[currentIndex].question}
                     correctAnswer={questions[currentIndex]['correct_answer']}
                     incorrectAnswers={questions[currentIndex]['incorrect_answers']}
-                 />
+                 /> */}
             </div>
             )
     

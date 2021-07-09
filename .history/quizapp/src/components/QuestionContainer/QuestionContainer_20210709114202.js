@@ -12,11 +12,9 @@ function QuestionContainer() {
           const data = await response.json();
           const results = data.results
           setQuestions(results);
+          console.log('questions: ', results[0])
     }, []);
-
-    // TODO: add function to calculate score
-
-    // TODO: add logic to end game.
+    
 
     // TODO: Add new component to render out questions.
     

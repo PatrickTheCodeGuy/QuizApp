@@ -13,10 +13,7 @@ function QuestionContainer() {
           const results = data.results
           setQuestions(results);
     }, []);
-
-    // TODO: add function to calculate score
-
-    // TODO: add logic to end game.
+    
 
     // TODO: Add new component to render out questions.
     

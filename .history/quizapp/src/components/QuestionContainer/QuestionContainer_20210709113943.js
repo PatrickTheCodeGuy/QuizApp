@@ -10,25 +10,22 @@ function QuestionContainer() {
     useEffect(async() => {
           const response = await fetch('https://opentdb.com/api.php?amount=10')
           const data = await response.json();
-          const results = data.results
-          setQuestions(results);
+          setQuestions(data.results);
+          console.log('questions: ', questions)
     }, []);
-
-    // TODO: add function to calculate score
-
-    // TODO: add logic to end game.
+    
 
     // TODO: Add new component to render out questions.
     
     return(
             <div>
             hello!
-                <QuestionComponent
+                {/* <QuestionComponent
                     totalQuestions={currentIndex + 1}
                     question={questions[currentIndex].question}
                     correctAnswer={questions[currentIndex]['correct_answer']}
                     incorrectAnswers={questions[currentIndex]['incorrect_answers']}
-                 />
+                 /> */}
             </div>
             )
     
