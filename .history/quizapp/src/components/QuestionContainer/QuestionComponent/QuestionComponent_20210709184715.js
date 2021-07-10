@@ -9,7 +9,7 @@ function QuestionComponent(props) {
 
 
     return (
-        <div class="question-card">
+        <div>
             <div className="question-text">{props.question.question}</div>
             <div className="answers-button-container">
                 {answers.map(answer => { return <button class="answer-button">{answer}</button>

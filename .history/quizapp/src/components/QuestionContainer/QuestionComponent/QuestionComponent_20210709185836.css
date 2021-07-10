@@ -28,12 +28,4 @@
     background-size: 400% 400%;
     animation: gradient 13s ease infinite;
     color: black;
-    cursor: pointer;
-}
-
-.answer-button:active {
-    border: 2px solid rgba(0, 0, 0, 0.564);
-    background: white;
-    color: rgb(43, 43, 43);
-    transform: translateY(4px);
 }
