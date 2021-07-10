@@ -6,8 +6,8 @@ function QuestionContainer() {
     
     const [questions, setQuestions] = useState([])
     let [answeredCorrectly, setAnsweredCorrectly ] = useState(null)
-    let [currentIndex, setCurrentIndex] = useState(-1);
-    let [isLoaded, setIsLoaded ] = useState(false);
+    let [currentIndex, setCurrentIndex] = useState(0);
+    let [isLoaded, setIsLoaded ] = useState();
     let [score, setScore] = useState(0);
 
     useEffect(async() => {
@@ -21,12 +21,11 @@ function QuestionContainer() {
 
     const setNextQuestion = useEffect(() => {
         console.log("questions: ", questions)
-        if(isLoaded && currentIndex + 1 >= questions.length){
+        if(isLoaded && currentIndex + 1 > questions.length){
             alert('game over');
         }
         else {
             setCurrentIndex(currentIndex + 1);
-            console.log("current index: ", currentIndex)
         }
       }, [answeredCorrectly]);
     
