@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import './QuestionContainer.css';
 import QuestionComponent from './QuestionComponent/QuestionComponent';
 
@@ -14,15 +14,17 @@ function QuestionContainer() {
           const response = await fetch('https://opentdb.com/api.php?amount=10')
           const data = await response.json();
           const results = data.results;
+          console.log("questions: ", results)
           setQuestions(results);
           setIsLoaded(true)
           
     }, []);
 
-    const setNextQuestion = useEffect(() => {
+    useEffect(() => {
+        console.log("firing off in use Effect for answered", answeredCorrectly);
         setCurrentIndex(currentIndex + 1);
-      }, [answeredCorrectly]);
-    
+        setAnsweredCorrectly(null);
+    }, [answeredCorrectly])
     
 
     // TODO: Add new component to render out questions.
@@ -32,9 +34,7 @@ function QuestionContainer() {
             {isLoaded ? <QuestionComponent
                     totalQuestions={currentIndex + 1}
                     question={questions[currentIndex]}
-                    setNextQuestion={setNextQuestion}
                     setAnsweredCorrectly={setAnsweredCorrectly}
-                    answeredCorrectly={answeredCorrectly}
                     answer={questions[currentIndex]['correct_answer']}
                     incorrect={questions[currentIndex]['incorrect_answers']}
                  /> : <h1>Please wait...</h1>}

@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import './QuestionContainer.css';
 import QuestionComponent from './QuestionComponent/QuestionComponent';
 
 function QuestionContainer() {
     
     const [questions, setQuestions] = useState([])
-    let [answeredCorrectly, setAnsweredCorrectly ] = useState(null)
+    let [answeredCorrectly, setAnsweredCorrectly ] = useState(false)
     let [currentIndex, setCurrentIndex] = useState(0);
     let [isLoaded, setIsLoaded ] = useState();
     let [score, setScore] = useState(0);
@@ -19,10 +19,17 @@ function QuestionContainer() {
           
     }, []);
 
-    const setNextQuestion = useEffect(() => {
-        setCurrentIndex(currentIndex + 1);
-      }, [answeredCorrectly]);
-    
+    useEffect(() => {
+        console.log("firing off in use Effect for answered", answeredCorrectly)
+        if(answeredCorrectly === true){
+            setCurrentIndex(currentIndex + 1)
+            console.log("current index: ", currentIndex);
+        } else {
+            // set logic for game over here.
+            setCurrentIndex(currentIndex + 1);
+            console.log("current index: ", currentIndex);
+        }
+    }, [answeredCorrectly])
     
 
     // TODO: Add new component to render out questions.
@@ -32,12 +39,11 @@ function QuestionContainer() {
             {isLoaded ? <QuestionComponent
                     totalQuestions={currentIndex + 1}
                     question={questions[currentIndex]}
-                    setNextQuestion={setNextQuestion}
                     setAnsweredCorrectly={setAnsweredCorrectly}
-                    answeredCorrectly={answeredCorrectly}
                     answer={questions[currentIndex]['correct_answer']}
                     incorrect={questions[currentIndex]['incorrect_answers']}
                  /> : <h1>Please wait...</h1>}
+                
             </div>
             )
     

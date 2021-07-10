@@ -14,13 +14,16 @@ function QuestionContainer() {
           const response = await fetch('https://opentdb.com/api.php?amount=10')
           const data = await response.json();
           const results = data.results;
+          console.log("questions: ", results)
           setQuestions(results);
           setIsLoaded(true)
           
     }, []);
 
     const setNextQuestion = useEffect(() => {
+        console.log("set next question")
         setCurrentIndex(currentIndex + 1);
+        console.log("currentIndex: ", currentIndex);
       }, [answeredCorrectly]);
     
     

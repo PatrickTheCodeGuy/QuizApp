@@ -31,7 +31,7 @@ function GameInfo() {
 														<p className="regular-text info">The rules are simple: Answer the question in the alloted time.</p>
 														<p className="regular-text info">If you select the correct answer you get points! Try to get as many as you can until you cant anymore.</p>
 													<p className="regular-text warning">IMPORTANT: DO NOT LEAVE THE TAB OR YOU WILL AUTOMATICALLY FAIL!</p>
-													<Link to='/questions' className="button-start">Go</Link>
+													<Link to='/questions' class="button-start">Go</Link>
 												</div>
 												
 												</div>

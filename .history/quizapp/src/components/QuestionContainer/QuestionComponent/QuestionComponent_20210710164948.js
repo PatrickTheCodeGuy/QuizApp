@@ -7,24 +7,14 @@ function QuestionComponent(props) {
     let [ activeClass, setActiveClass ] = useState('')
     // Made to reset wrong button className.
     let [ wrongAnswerClass, setWrongAnswerClass] = useState('');
-    let [ rightAnswer, setRightAnswer ] = useState(props.answer)
+
     let [ isDisabled, setIsDisabled ] = useState(false);
-    
     // Spread in the incorrect answers with the correct answer on init.
     let [ answers, setAnswers ] = useState([...props.incorrect, props.answer]);
 
-    // Flip boolean to help rerender component.
-    let booleanCheck = false;
-
-    // When props update, reset button styling.
-    useEffect(() => {
-        // Reset styling
-        setActiveClass('')
-        setWrongAnswerClass('')
-        setIsDisabled(false)
-        setRightAnswer(props.answer)
-        setAnswers([...props.incorrect, props.answer]);
-    }, [props])
+    // useEffect(() => {
+    //     setAnswers();
+    // })
     
     const onClick = useCallback((answer) => {
         // Disable all buttons to prevent re-answering.
@@ -33,12 +23,13 @@ function QuestionComponent(props) {
         setActiveClass('correct')
         // Needed to set the incorrect buttons to red, and reset styling on new questions.
         setWrongAnswerClass('wrong')
-        setTimeout(() => {
-            // Keep component level flip to re render component and add 1 to currentIndex BAD SOLUTION.
-            booleanCheck = !booleanCheck;
-            props.setAnsweredCorrectly(booleanCheck);
-        }, 5000)
-        
+        if(answer === props.answer){
+            // Pass true up to parent component and set isCorrect to true.
+            props.setAnsweredCorrectly(true);
+        } else {
+            // Logic to prevent any bugs where answered correctly stays true, just in case :)
+            props.setAnsweredCorrectly(false);
+        }
     }, [] )
     
 

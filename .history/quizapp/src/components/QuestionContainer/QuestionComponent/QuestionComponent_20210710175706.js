@@ -9,11 +9,9 @@ function QuestionComponent(props) {
     let [ wrongAnswerClass, setWrongAnswerClass] = useState('');
     let [ rightAnswer, setRightAnswer ] = useState(props.answer)
     let [ isDisabled, setIsDisabled ] = useState(false);
-    
     // Spread in the incorrect answers with the correct answer on init.
     let [ answers, setAnswers ] = useState([...props.incorrect, props.answer]);
 
-    // Flip boolean to help rerender component.
     let booleanCheck = false;
 
     // When props update, reset button styling.
