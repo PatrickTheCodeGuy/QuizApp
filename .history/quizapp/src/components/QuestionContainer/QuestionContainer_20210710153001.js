@@ -18,10 +18,6 @@ function QuestionContainer() {
           setIsLoaded(true)
           
     }, []);
-
-    useEffect(() => {
-        console.log("firing off in use Effect for answered", answeredCorrectly)
-    }, [answeredCorrectly])
     
 
     // TODO: Add new component to render out questions.

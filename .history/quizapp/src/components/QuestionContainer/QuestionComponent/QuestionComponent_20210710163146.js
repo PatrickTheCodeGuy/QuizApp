@@ -13,7 +13,7 @@ function QuestionComponent(props) {
     const [ answers, setAnswers ] = useState([...props.incorrect, props.answer]);
     
     const onClick = useCallback((answer) => {
-        // Disable all buttons to prevent re-answering.
+        // Disable all buttons to prevent reanswering.
         setIsDisabled(true)
         // Set state of active class to correct, then set it on the className in html.
         setActiveClass('correct')

@@ -13,16 +13,15 @@ function QuestionComponent(props) {
     const [ answers, setAnswers ] = useState([...props.incorrect, props.answer]);
     
     const onClick = useCallback((answer) => {
-        // Disable all buttons to prevent re-answering.
-        setIsDisabled(true)
-        // Set state of active class to correct, then set it on the className in html.
-        setActiveClass('correct')
-        // Needed to set the incorrect buttons to red, and reset styling on new questions.
-        setWrongAnswerClass('wrong')
         if(answer === props.answer){
+            // Set state of active class to correct, then set it on the className in html.
+            setActiveClass('correct')
+            // Needed to set the incorrect buttons to red, and reset styling on new questions.
+            setWrongAnswerClass('wrong')
             // Pass true up to parent component and set isCorrect to true.
             props.setAnsweredCorrectly(true);
         } else {
+            setIsDisabled(true)
             // Logic to prevent any bugs where answered correctly stays true, just in case :)
             props.setAnsweredCorrectly(false);
         }
@@ -34,7 +33,7 @@ function QuestionComponent(props) {
         <div class="question-card">
             <div className="question-text">{props.question.question}</div>
             <div className="answers-button-container">
-                {answers.map(answer => { return <button disabled={isDisabled} key={answer} onClick={() => onClick(answer)} className={`answer-button ${answer === props.answer ? activeClass : wrongAnswerClass}`}>{answer}</button>
+                {answers.map(answer => { return <button disabled={`${!isDisabled}`} key={answer} onClick={() => onClick(answer)} className={`answer-button ${answer === props.answer ? activeClass : wrongAnswerClass}`}>{answer}</button>
                 })}
             </div>
         </div>

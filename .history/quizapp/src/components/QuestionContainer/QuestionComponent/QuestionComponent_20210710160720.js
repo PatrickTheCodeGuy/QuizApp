@@ -2,25 +2,18 @@ import React, {useState, useCallback} from 'react';
 import './QuestionComponent.css';
 
 
-function QuestionComponent(props) {
-    // Sets active class of button using a string in className.
-    const [ activeClass, setActiveClass ] = useState('')
-    // Made to reset wrong button className.
-    const [ wrongAnswerClass, setWrongAnswerClass] = useState('');
 
-    const [ isDisabled, setIsDisabled ] = useState(false);
-    // Spread in the incorrect answers with the correct answer on init.
+
+
+function QuestionComponent(props) {
+    const [ activeClass, setActiveClass ] = useState('')
+    const [ wrongAnswerClass, setWrongAnswerClass] = useState('');
     const [ answers, setAnswers ] = useState([...props.incorrect, props.answer]);
     
     const onClick = useCallback((answer) => {
-        // Disable all buttons to prevent re-answering.
-        setIsDisabled(true)
-        // Set state of active class to correct, then set it on the className in html.
-        setActiveClass('correct')
-        // Needed to set the incorrect buttons to red, and reset styling on new questions.
-        setWrongAnswerClass('wrong')
         if(answer === props.answer){
-            // Pass true up to parent component and set isCorrect to true.
+            setActiveClass('correct')
+            setWrongAnswerClass('wrong')
             props.setAnsweredCorrectly(true);
         } else {
             // Logic to prevent any bugs where answered correctly stays true, just in case :)
@@ -34,7 +27,7 @@ function QuestionComponent(props) {
         <div class="question-card">
             <div className="question-text">{props.question.question}</div>
             <div className="answers-button-container">
-                {answers.map(answer => { return <button disabled={isDisabled} key={answer} onClick={() => onClick(answer)} className={`answer-button ${answer === props.answer ? activeClass : wrongAnswerClass}`}>{answer}</button>
+                {answers.map(answer => { return <button key={answer} onClick={() => onClick(answer)} className={`answer-button ${answer === props.answer ? activeClass : wrongAnswerClass}`}>{answer}</button>
                 })}
             </div>
         </div>

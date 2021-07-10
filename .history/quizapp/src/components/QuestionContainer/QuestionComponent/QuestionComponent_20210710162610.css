@@ -42,18 +42,10 @@
 }
 .answer-button.correct {
     background: green;
+    border: 3px solid black;
 }
 
 .answer-button:disabled {
     cursor:not-allowed;
     border: 1px solid gray;
-}
-
-.answer-button:disabled:hover {
-    color: rgba(0, 0, 0, 0.27);
-}
-
-.answer-button:disabled.correct {
-    border: 3px solid black;
-    color: black;
 }

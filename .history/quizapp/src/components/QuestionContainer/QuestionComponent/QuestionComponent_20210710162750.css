@@ -50,7 +50,7 @@
 }
 
 .answer-button:disabled:hover {
-    color: rgba(0, 0, 0, 0.27);
+    color: rgb(43, 43, 43);
 }
 
 .answer-button:disabled.correct {

@@ -20,7 +20,7 @@ function QuestionContainer() {
     }, []);
 
     useEffect(() => {
-        console.log("firing off in use Effect for answered", answeredCorrectly)
+        console.log("firing off in use Effect for answered")
     }, [answeredCorrectly])
     
 
