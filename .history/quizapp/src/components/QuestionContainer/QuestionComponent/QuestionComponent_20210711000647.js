@@ -49,7 +49,7 @@ function QuestionComponent(props) {
 
     return (
         <div className="question-card">
-            <h3 className="question-text">{replaceSpecialCharacters(props.question.question)}</h3>
+            <h3 className="question-text">{replaceSpecialString(props.question.question)}</h3>
             <div className="answers-button-container">
                 {answers.map(answer => { return <button disabled={isDisabled} key={answer} onClick={() => onClick(answer)} className={`answer-button ${answer === props.answer ? activeClass : wrongAnswerClass}`}>{answer}</button>
                 })}

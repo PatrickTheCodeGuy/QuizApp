@@ -1,8 +1,25 @@
 import React, {useState, useCallback, useEffect} from 'react';
 import './QuestionComponent.css';
-import { replaceSpecialCharacters, shuffleArray, } from './specialCharacters';
+import { replaceSpecialCharacters } from './specialCharacters';
 
+// Basic shuffle function to shuffle answers
+function shuffleArray(array)  {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    
+    return array;
+}
 
+function replaceSpecialCode(question) {
+    let scrubbedString = replaceSpecialCharacters(question)
+    console.log("scrubbed string: ", scrubbedString)
+    return scrubbedString;
+    
+}
 
 function QuestionComponent(props) {
     // Sets active class of button using a string in className.
@@ -13,7 +30,7 @@ function QuestionComponent(props) {
     let [ isDisabled, setIsDisabled ] = useState(false);
 
     // Spread in the incorrect answers with the correct answer on init.
-    let [ answers, setAnswers ] = useState(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
+    let [ answers, setAnswers ] = useState(shuffleArray([...replaceSpecialCode(props.incorrect), replaceSpecialCode(props.answer)]));
 
     // Flip boolean to help rerender component.
     let booleanCheck = false;
@@ -25,9 +42,7 @@ function QuestionComponent(props) {
         setWrongAnswerClass('')
         setIsDisabled(false)
         setRightAnswer(props.answer)
-
-        // Replace special characters with their actual string variant.
-        setAnswers(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
+        setAnswers(shuffleArray([...replaceSpecialCode(props.incorrect), replaceSpecialCode(props.answer)]));
     }, [props])
     
     const onClick = useCallback((answer) => {
