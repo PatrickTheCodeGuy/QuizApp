@@ -38,18 +38,18 @@ function QuestionComponent(props) {
         // Needed to set the incorrect buttons to red, and reset styling on new questions.
         setWrongAnswerClass('wrong')
         
-        //TODO: Fix logic where old answer still persists after new answer is sent.
+        //TODO: Add logic to up score if correct answer
         
         setTimeout(() => {
+            // Keep component level flip to re render component and add 1 to currentIndex BAD SOLUTION.
+            booleanCheck = !booleanCheck;
+            props.setAnsweredCorrectly(booleanCheck);
             console.log("answer selected:", answer)
-            console.log("stored answer: ", props.answer)
+            console.log("stored answer: ", rightAnswer)
             if(answer === props.answer){
                 let newScore = props.score + 100
                 props.setScore(newScore);
             }
-            // Keep component level flip to re render component and add 1 to currentIndex BAD SOLUTION.
-            booleanCheck = !booleanCheck;
-            props.setAnsweredCorrectly(booleanCheck);
         }, 5000)
         
     }, [] )

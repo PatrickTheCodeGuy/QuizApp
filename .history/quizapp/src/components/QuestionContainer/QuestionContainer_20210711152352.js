@@ -15,14 +15,13 @@ function QuestionContainer() {
     
 
     useEffect(async() => {
-          const response = await fetch('https://opentdb.com/api.php?amount=10&type=multiple')
+          const response = await fetch('https://opentdb.com/api.php?amount=2&type=multiple')
           const data = await response.json();
           const results = data.results;
           setQuestions(results);
           setIsLoaded(true)
           
     }, []);
-    
 
     const setNextQuestion = useEffect(() => {
         if(isLoaded && currentIndex + 1 >= questions.length){
@@ -35,12 +34,15 @@ function QuestionContainer() {
             setCurrentIndex(currentIndex + 1);
         }
       }, [answeredCorrectly]);
-   
+    
+    
+
+    // TODO: Add new component to render out questions.
     
     return(
             <div className="question-container">
                 <div>
-                    <h3>Score: {score}</h3>
+                    <h3>{score}</h3>
                 </div>
             {isLoaded ? <QuestionComponent
                     totalQuestions={currentIndex + 1}

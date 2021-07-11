@@ -22,7 +22,6 @@ function QuestionContainer() {
           setIsLoaded(true)
           
     }, []);
-    
 
     const setNextQuestion = useEffect(() => {
         if(isLoaded && currentIndex + 1 >= questions.length){
@@ -35,7 +34,10 @@ function QuestionContainer() {
             setCurrentIndex(currentIndex + 1);
         }
       }, [answeredCorrectly]);
-   
+    
+    
+
+    // TODO: Add new component to render out questions.
     
     return(
             <div className="question-container">

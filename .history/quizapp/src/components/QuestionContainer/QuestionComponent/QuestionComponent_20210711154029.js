@@ -38,7 +38,7 @@ function QuestionComponent(props) {
         // Needed to set the incorrect buttons to red, and reset styling on new questions.
         setWrongAnswerClass('wrong')
         
-        //TODO: Fix logic where old answer still persists after new answer is sent.
+        //TODO: Add logic to up score if correct answer
         
         setTimeout(() => {
             console.log("answer selected:", answer)

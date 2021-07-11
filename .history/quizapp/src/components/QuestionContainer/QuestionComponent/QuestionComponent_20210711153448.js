@@ -24,13 +24,13 @@ function QuestionComponent(props) {
         setWrongAnswerClass('')
         setIsDisabled(false)
         console.log("props answer update: ", props.answer)
-        setRightAnswer(replaceSpecialCharacters(props.answer));
+        setRightAnswer(props.answer)
 
         // Replace special characters with their actual string variant.
         setAnswers(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
     }, [props])
     
-    const onClick = useCallback((answer) => {
+    const onClick = useEffect((answer) => {
         // Disable all buttons to prevent re-answering.
         setIsDisabled(true)
         // Set state of active class to correct, then set it on the className in html.
@@ -38,15 +38,15 @@ function QuestionComponent(props) {
         // Needed to set the incorrect buttons to red, and reset styling on new questions.
         setWrongAnswerClass('wrong')
         
-        //TODO: Fix logic where old answer still persists after new answer is sent.
-        
+        //TODO: Add logic to up score if correct answer
+        console.log("answer selected:", answer)
+        console.log("stored answer: ", rightAnswer)
+        if(answer === rightAnswer){
+            let newScore = props.score + 100
+            props.setScore(newScore);
+        }
+
         setTimeout(() => {
-            console.log("answer selected:", answer)
-            console.log("stored answer: ", props.answer)
-            if(answer === props.answer){
-                let newScore = props.score + 100
-                props.setScore(newScore);
-            }
             // Keep component level flip to re render component and add 1 to currentIndex BAD SOLUTION.
             booleanCheck = !booleanCheck;
             props.setAnsweredCorrectly(booleanCheck);

@@ -23,8 +23,7 @@ function QuestionComponent(props) {
         setActiveClass('')
         setWrongAnswerClass('')
         setIsDisabled(false)
-        console.log("props answer update: ", props.answer)
-        setRightAnswer(replaceSpecialCharacters(props.answer));
+        setRightAnswer(props.answer)
 
         // Replace special characters with their actual string variant.
         setAnswers(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
@@ -37,16 +36,7 @@ function QuestionComponent(props) {
         setActiveClass('correct')
         // Needed to set the incorrect buttons to red, and reset styling on new questions.
         setWrongAnswerClass('wrong')
-        
-        //TODO: Fix logic where old answer still persists after new answer is sent.
-        
         setTimeout(() => {
-            console.log("answer selected:", answer)
-            console.log("stored answer: ", props.answer)
-            if(answer === props.answer){
-                let newScore = props.score + 100
-                props.setScore(newScore);
-            }
             // Keep component level flip to re render component and add 1 to currentIndex BAD SOLUTION.
             booleanCheck = !booleanCheck;
             props.setAnsweredCorrectly(booleanCheck);
@@ -60,7 +50,7 @@ function QuestionComponent(props) {
         <div className="question-card">
             <h3 className="question-text">{replaceSpecialCharacters(props.question.question)}</h3>
             <div className="answers-button-container">
-                {answers.map(answer => { return <button disabled={isDisabled} key={answer} onClick={() => onClick(answer)} className={`answer-button ${answer === rightAnswer ? activeClass : wrongAnswerClass}`}>{answer}</button>
+                {answers.map(answer => { return <button disabled={isDisabled} key={answer} onClick={() => onClick(answer)} className={`answer-button ${answer === props.answer ? activeClass : wrongAnswerClass}`}>{answer}</button>
                 })}
             </div>
         </div>
