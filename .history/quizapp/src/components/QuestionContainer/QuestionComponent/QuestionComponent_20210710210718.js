@@ -1,7 +1,7 @@
 import React, {useState, useCallback, useEffect} from 'react';
 import './QuestionComponent.css';
 
-// Basic shuffle function to shuffle answers
+
 function shuffleArray(array)  {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -9,7 +9,6 @@ function shuffleArray(array)  {
         array[i] = array[j];
         array[j] = temp;
     }
-    
     return array;
 }
 
@@ -34,7 +33,7 @@ function QuestionComponent(props) {
         setWrongAnswerClass('')
         setIsDisabled(false)
         setRightAnswer(props.answer)
-        setAnswers(shuffleArray([...props.incorrect, props.answer]));
+        setAnswers([...props.incorrect, props.answer]);
     }, [props])
     
     const onClick = useCallback((answer) => {

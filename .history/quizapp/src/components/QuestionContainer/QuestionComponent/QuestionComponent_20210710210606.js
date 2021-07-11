@@ -1,17 +1,6 @@
 import React, {useState, useCallback, useEffect} from 'react';
 import './QuestionComponent.css';
 
-// Basic shuffle function to shuffle answers
-function shuffleArray(array)  {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    
-    return array;
-}
 
 function QuestionComponent(props) {
     // Sets active class of button using a string in className.
@@ -34,7 +23,7 @@ function QuestionComponent(props) {
         setWrongAnswerClass('')
         setIsDisabled(false)
         setRightAnswer(props.answer)
-        setAnswers(shuffleArray([...props.incorrect, props.answer]));
+        setAnswers([...props.incorrect, props.answer]);
     }, [props])
     
     const onClick = useCallback((answer) => {
@@ -51,6 +40,16 @@ function QuestionComponent(props) {
         }, 5000)
         
     }, [] )
+
+    shuffleArray = (array) => {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
     
 
 
