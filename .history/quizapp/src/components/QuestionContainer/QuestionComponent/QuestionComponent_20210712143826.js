@@ -14,7 +14,8 @@ function QuestionComponent(props) {
 
     // Spread in the incorrect answers with the correct answer on init.
     let [ answers, setAnswers ] = useState(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
-   
+    // Flip boolean to help re-render component.
+    let booleanCheck = props.answeredCorrectly
 
     // When props update, reset button styling.
     useEffect(() => {
@@ -22,6 +23,7 @@ function QuestionComponent(props) {
         setActiveClass('')
         setWrongAnswerClass('')
         setIsDisabled(false)
+        console.log("props answer update: ", props.answer)
         props.setAnswered(false);
         setRightAnswer(replaceSpecialCharacters(props.answer));
 
@@ -29,15 +31,12 @@ function QuestionComponent(props) {
         setAnswers(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
     }, [props])
 
-    // Create async timeout to allow time for state to resolve on update.
     function timeout(answer, delay) {
         return new Promise( res => setTimeout(() => {
             if(answer === props.answer){
                 let newScore = props.score + 100
-                props.setNextQuestion(newScore)
-            } else {
-                let newScore = props.score + 0
-                props.setNextQuestion(newScore)
+                props.setScore(newScore);
+                props.setAnswered(!props.answered);
             }
         }, delay) );
     }
@@ -49,8 +48,9 @@ function QuestionComponent(props) {
         setActiveClass('correct')
         // Needed to set the incorrect buttons to red, and reset styling on new questions.
         setWrongAnswerClass('wrong')
-        let resolved = await timeout(answer, 5000);
-    }, [props] )
+        let resolved = await timeout(answer,5000);
+        // Pass in props to get updated version of props from memoized callback. Else, get old state bug.
+    }, [] )
     
 
 

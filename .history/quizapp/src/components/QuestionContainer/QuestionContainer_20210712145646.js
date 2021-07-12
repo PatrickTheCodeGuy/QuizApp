@@ -25,7 +25,7 @@ function QuestionContainer() {
     
 
     const setNextQuestion = useCallback((newScore) => {
-        if(isLoaded && currentIndex >= questions.length ){
+        if(isLoaded && currentIndex + 1 >= questions.length ){
             history.push({
                 pathname: '/template',
                 state: { score: score}
@@ -35,8 +35,7 @@ function QuestionContainer() {
             setScore(newScore)
             setCurrentIndex(currentIndex + 1);
         }
-        // Use currentIndex to get the updated memoized state(is updated in hook), else we would never get updated state.
-      }, [currentIndex]);
+      }, [score]);
    
     
     return(

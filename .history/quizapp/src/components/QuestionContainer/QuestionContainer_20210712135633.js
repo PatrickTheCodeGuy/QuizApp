@@ -7,8 +7,8 @@ import GameOverScreen from '../GameOverScreen/GameOverScreen';
 function QuestionContainer() {
     const history = useHistory();
     const [questions, setQuestions] = useState([])
-    let [answered, setAnswered ] = useState(false)
-    let [currentIndex, setCurrentIndex] = useState(0);
+    let [answeredCorrectly, setAnsweredCorrectly ] = useState(false)
+    let [currentIndex, setCurrentIndex] = useState(-1);
     let [isLoaded, setIsLoaded ] = useState(false);
     let [score, setScore] = useState(0);
 
@@ -24,19 +24,17 @@ function QuestionContainer() {
     }, []);
     
 
-    const setNextQuestion = useCallback((newScore) => {
-        if(isLoaded && currentIndex >= questions.length ){
+    const setNextQuestion = useEffect(() => {
+        if(isLoaded && currentIndex + 1 >= questions.length){
             history.push({
                 pathname: '/template',
                 state: { score: score}
             })
         }
         else {
-            setScore(newScore)
             setCurrentIndex(currentIndex + 1);
         }
-        // Use currentIndex to get the updated memoized state(is updated in hook), else we would never get updated state.
-      }, [currentIndex]);
+      }, [answeredCorrectly]);
    
     
     return(
@@ -50,8 +48,8 @@ function QuestionContainer() {
                     setNextQuestion={setNextQuestion}
                     setScore={setScore}
                     score={score}
-                    setAnswered={setAnswered}
-                    answered={answered}
+                    setAnsweredCorrectly={setAnsweredCorrectly}
+                    answeredCorrectly={answeredCorrectly}
                     answer={questions[currentIndex]['correct_answer']}
                     incorrect={questions[currentIndex]['incorrect_answers']}
                  /> : <h1>Please wait...</h1>}

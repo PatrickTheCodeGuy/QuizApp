@@ -14,7 +14,8 @@ function QuestionComponent(props) {
 
     // Spread in the incorrect answers with the correct answer on init.
     let [ answers, setAnswers ] = useState(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
-   
+    // Flip boolean to help re-render component.
+    let booleanCheck = false;
 
     // When props update, reset button styling.
     useEffect(() => {
@@ -22,34 +23,31 @@ function QuestionComponent(props) {
         setActiveClass('')
         setWrongAnswerClass('')
         setIsDisabled(false)
-        props.setAnswered(false);
+        console.log("props answer update: ", props.answer)
         setRightAnswer(replaceSpecialCharacters(props.answer));
 
         // Replace special characters with their actual string variant.
         setAnswers(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
     }, [props])
-
-    // Create async timeout to allow time for state to resolve on update.
-    function timeout(answer, delay) {
-        return new Promise( res => setTimeout(() => {
-            if(answer === props.answer){
-                let newScore = props.score + 100
-                props.setNextQuestion(newScore)
-            } else {
-                let newScore = props.score + 0
-                props.setNextQuestion(newScore)
-            }
-        }, delay) );
-    }
     
-    const onClick = useCallback(async (answer) => {
+    const onClick = useCallback((answer) => {
         // Disable all buttons to prevent re-answering.
         setIsDisabled(true)
         // Set state of active class to correct, then set it on the className in html.
         setActiveClass('correct')
         // Needed to set the incorrect buttons to red, and reset styling on new questions.
         setWrongAnswerClass('wrong')
-        let resolved = await timeout(answer, 5000);
+        
+        setTimeout(() => {
+            if(answer === props.answer){
+                let newScore = props.score + 100
+                props.setScore(newScore);
+            }
+            // Keep component level flip to re render component and add 1 to currentIndex BAD SOLUTION.
+            booleanCheck = !booleanCheck;
+            props.setAnsweredCorrectly(booleanCheck);
+        }, 5000)
+        // Pass in props to get updated version of props from memoized callback. Else, get old state bug.
     }, [props] )
     
 

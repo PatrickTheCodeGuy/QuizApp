@@ -14,7 +14,8 @@ function QuestionComponent(props) {
 
     // Spread in the incorrect answers with the correct answer on init.
     let [ answers, setAnswers ] = useState(shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer])));
-   
+    // Flip boolean to help re-render component.
+    let booleanCheck = props.answeredCorrectly
 
     // When props update, reset button styling.
     useEffect(() => {
