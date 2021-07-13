@@ -16,12 +16,12 @@
     display: none;
 }
 
-.alert.addOne{
+.alert.correct{
     color: rgb(0, 186, 0);
     display: block;
 }
 
-.alert.incorrect{
+.alert.wrong{
     color: red;
     display: block;
 }

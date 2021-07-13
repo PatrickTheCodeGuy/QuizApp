@@ -21,7 +21,7 @@ function QuestionContainer() {
           const data = await response.json();
           const results = data.results;
           setQuestions(results);
-          setApiHasLoaded(true);
+          setApiHasLoaded(false)
           
     }, []);
     
@@ -42,14 +42,11 @@ function QuestionContainer() {
    
     
     return(
-            
             <div className="question-container">
-                {apiHasLoaded ? 
-                    <div>
-                        <h3>Score: {score}</h3>
-                        <h2 className={'addScore ' }>+{100 * scoreMultiplier}</h2>
-                    </div> : null
-                }
+                <div>
+                    <h3>Score: {score}</h3>
+                    <h2 className={'addScore ' }>+{100 * scoreMultiplier}</h2>
+                </div>
             {apiHasLoaded ? <QuestionComponent
                     totalQuestions={currentIndex + 1}
                     question={questions[currentIndex]}

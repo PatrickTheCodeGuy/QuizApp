@@ -21,7 +21,7 @@ function QuestionContainer() {
           const data = await response.json();
           const results = data.results;
           setQuestions(results);
-          setApiHasLoaded(true);
+          setApiHasLoaded(false)
           
     }, []);
     

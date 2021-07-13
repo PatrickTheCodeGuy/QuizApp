@@ -21,7 +21,7 @@ function QuestionContainer() {
           const data = await response.json();
           const results = data.results;
           setQuestions(results);
-          setApiHasLoaded(true);
+          setApiHasLoaded(true)
           
     }, []);
     
@@ -42,14 +42,11 @@ function QuestionContainer() {
    
     
     return(
-            
             <div className="question-container">
-                {apiHasLoaded ? 
-                    <div>
-                        <h3>Score: {score}</h3>
-                        <h2 className={'addScore ' }>+{100 * scoreMultiplier}</h2>
-                    </div> : null
-                }
+                <div>
+                    <h3>Score: {score}</h3>
+                    <h2 className={'addScore ' }>+{100 * scoreMultiplier}</h2>
+                </div>
             {apiHasLoaded ? <QuestionComponent
                     totalQuestions={currentIndex + 1}
                     question={questions[currentIndex]}
@@ -60,7 +57,7 @@ function QuestionContainer() {
                     answered={answered}
                     answer={questions[currentIndex]['correct_answer']}
                     incorrect={questions[currentIndex]['incorrect_answers']}
-                 /> : <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
+                 /> : <h1>Please wait...</h1>}
             </div>
             )
     

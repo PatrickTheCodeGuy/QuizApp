@@ -1,0 +1,38 @@
+/* css goes here */
+
+.question-container {
+    font-family: 'Press Start 2P', cursive;
+    border: 6px groove black;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 12px 25px -8px #000000;
+    width: 55em;
+    height: 40em;
+    margin: 10% auto 0;
+}
+
+.addScore{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.1em;
+    margin-left: 13%;
+    display: none;
+}
+
+.addScore.showAddScore {
+    display: block;
+    color: rgb(150, 200, 0);
+    animation:mymove 0.5s;
+}
+.addScore.showNoAddScore {
+    display: block;
+    color: rgb(155, 50, 34);
+    animation:mymove 0.5s;
+}
+
+@keyframes mymove
+{ 
+    from {top:100px; opacity: 0;}
+    from{right:50px;}
+    to{right: 0px}
+    to {top:0px; opacity: 0.75}
+}

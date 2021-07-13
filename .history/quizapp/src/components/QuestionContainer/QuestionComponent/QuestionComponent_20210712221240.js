@@ -21,7 +21,7 @@ function QuestionComponent(props) {
     useEffect(() => {
         // Reset styling
         setActiveClass('')
-        setIsCorrect(0);
+        setIsCorrect(0;
         setWrongAnswerClass('')
         setIsDisabled(false)
         props.setAnswered(false);
@@ -35,11 +35,13 @@ function QuestionComponent(props) {
     function timeout(answer, delay) {
         return new Promise( res => setTimeout(() => {
             if(answer === replaceSpecialCharacters(props.answer)){
+                setIsCorrect(1);
                 let newScore = props.score + 100
-                props.setNextQuestion(newScore, 1)
+                props.setNextQuestion(newScore)
             } else {
+                setIsCorrect(2)
                 let newScore = props.score + 0
-                props.setNextQuestion(newScore, 2)
+                props.setNextQuestion(newScore)
             }
         }, delay) );
     }
@@ -51,11 +53,6 @@ function QuestionComponent(props) {
         setActiveClass('correct')
         // Needed to set the incorrect buttons to red, and reset styling on new questions.
         setWrongAnswerClass('wrong')
-        if(answer === replaceSpecialCharacters(props.answer)){
-            setIsCorrect(1);
-        } else {
-            setIsCorrect(2)
-        }
         let resolved = await timeout(answer, 5000);
     }, [props] )
     

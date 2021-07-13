@@ -36,10 +36,10 @@ function QuestionComponent(props) {
         return new Promise( res => setTimeout(() => {
             if(answer === replaceSpecialCharacters(props.answer)){
                 let newScore = props.score + 100
-                props.setNextQuestion(newScore, 1)
+                props.setNextQuestion(newScore)
             } else {
                 let newScore = props.score + 0
-                props.setNextQuestion(newScore, 2)
+                props.setNextQuestion(newScore)
             }
         }, delay) );
     }
