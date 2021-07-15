@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 
 function StartMenu() {
-        
-    return (
+    
+        return (
             <div className="menu-container">
                 <h1 className="menu-text">Quizania</h1>
                 <p className="regular-text">A quiz game, try and get the highest score!</p>
