@@ -24,8 +24,6 @@ function QuestionContainer() {
       setQuestions(results);
       setApiHasLoaded(true);
     }
-
-    setData();
   }, []);
 
   const setNextQuestion = useCallback(

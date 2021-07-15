@@ -14,7 +14,7 @@ function QuestionContainer() {
   //TODO: Setup settings page with score multiplier for difficulty then pass via Link and set on initial render below
   let [scoreMultiplier, setScoreMultiplier] = useState(1);
 
-  useEffect(() => {
+  useEffect(async () => {
     async function setData() {
       const response = await fetch(
         "https://opentdb.com/api.php?amount=3&type=multiple"
@@ -24,8 +24,6 @@ function QuestionContainer() {
       setQuestions(results);
       setApiHasLoaded(true);
     }
-
-    setData();
   }, []);
 
   const setNextQuestion = useCallback(

@@ -43,7 +43,7 @@ function QuestionContainer() {
       }
       // Use currentIndex to get the updated memoized state(is updated in hook), else we would never get updated state.
     },
-    [currentIndex]
+    [apiHasLoaded, currentIndex, history, questions.length, score]
   );
 
   return (
