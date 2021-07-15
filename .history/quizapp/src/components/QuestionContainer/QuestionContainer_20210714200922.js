@@ -29,9 +29,9 @@ function QuestionContainer() {
     const setNextQuestion = useCallback((newScore, answeredCorrectly) => {
         console.log("curr index: ", currentIndex);
         console.log("questions len", questions.length)
-        if(apiHasLoaded && currentIndex + 1 >= questions.length ){
+        if(apiHasLoaded && currentIndex >= questions.length ){
             history.push({
-                pathname: '/gameover',
+                pathname: '/template',
                 state: { score: score}
             })
         }

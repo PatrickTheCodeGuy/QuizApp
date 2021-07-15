@@ -2,21 +2,13 @@ import React from 'react';
 import './GameOver.css'
 import { useLocation } from "react-router-dom";
 import { ImHome } from "react-icons/im";
-import { useHistory } from 'react-router';
 
 function GameOverScreen(props) {
     const location = useLocation();
-    const history = useHistory();
-
-    const onClick = () => {
-        history.push('/')
-    }
-
-
 
     return(
         <div className="game-over-screen">
-            <div className="icon-container" onClick={onClick}>
+            <div className="icon-container">
                 <ImHome size={'3.5em'}/>
                 </div>
             <h1 className="game-over-text">Game Over!</h1>

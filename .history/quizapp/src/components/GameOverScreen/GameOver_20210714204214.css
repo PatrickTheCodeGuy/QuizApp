@@ -1,0 +1,37 @@
+.game-over-screen{
+    font-family: 'Press Start 2P', cursive;
+    border: 6px groove black;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 12px 25px -8px #000000;
+    width: 55em;
+    height: 40em;
+    margin: 10% auto 0;
+    position: relative;
+}
+
+.save-game-container{
+    position: absolute;
+    bottom: 0;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.save-score-button{
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(-42deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 13s ease infinite;
+    color: white;
+    border: none;
+    font-size: x-large;
+    font-weight: 600;
+    transition: background-color 0.1s ease;
+    height: 5em;
+    width: 100%;
+}
+
+.icon-container{
+    margin: 0.5em 0 0 0.5em;
+}
