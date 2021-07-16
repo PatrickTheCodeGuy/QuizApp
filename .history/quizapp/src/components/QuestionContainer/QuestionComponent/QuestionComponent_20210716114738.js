@@ -51,7 +51,7 @@ function QuestionComponent(props) {
   }
 
   const onClick = useCallback(
-    // TODO:add logic to throw boolean when button is selected back to questionContainer
+    // add logic to throw boolean when button is selected back to questionContainer
     async (answer) => {
       // Disable all buttons to prevent re-answering.
       setIsDisabled(true);

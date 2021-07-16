@@ -11,9 +11,10 @@ function QuestionContainer(props) {
   let [apiHasLoaded, setApiHasLoaded] = useState(false);
   let [score, setScore] = useState(0);
   let propsData = props.location.state;
-  // Timer set up
+
   let [timer, setTimer] = useState(propsData.questionsNum);
 
+  //TODO: Setup settings page with score multiplier for difficulty then pass via Link and set on initial render below
   let [scoreMultiplier, setScoreMultiplier] = useState(propsData.multiplier);
 
   useEffect((props) => {
@@ -43,10 +44,6 @@ function QuestionContainer(props) {
 
     setData();
   }, []);
-
-  // TODO:add useEffect for timer, that updates when the timer counts down.
-
-  // TODO: add function to pass to child to be called to bring boolean back
 
   const setNextQuestion = useCallback(
     (newScore, answeredCorrectly) => {

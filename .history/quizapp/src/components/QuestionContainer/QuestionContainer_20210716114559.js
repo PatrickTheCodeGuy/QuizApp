@@ -44,9 +44,7 @@ function QuestionContainer(props) {
     setData();
   }, []);
 
-  // TODO:add useEffect for timer, that updates when the timer counts down.
-
-  // TODO: add function to pass to child to be called to bring boolean back
+  // add useEffect for timer, that updates when the timer counts down.
 
   const setNextQuestion = useCallback(
     (newScore, answeredCorrectly) => {
