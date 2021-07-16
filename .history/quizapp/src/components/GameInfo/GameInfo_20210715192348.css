@@ -16,6 +16,7 @@
 
 .back-button:hover {
   color: rgba(26, 26, 26, 0.749);
+  transform: translateY(2px);
 }
 .exit-container {
   position: absolute;
