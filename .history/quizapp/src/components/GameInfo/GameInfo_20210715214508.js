@@ -169,7 +169,6 @@ function GameInfo() {
               multiplier: multiplier,
               timeDifficulty: timeDifficulty,
               categoryId: categoryId,
-              questionNum: questionsNum,
               questionDifficultyState: questionDifficultyState,
             },
           }}

@@ -21,33 +21,11 @@ export const timerOptions = [
   },
 ];
 
-export const numberOfQuestion = [
-  { label: 1, value: { type: "questionNum", value: 1 } },
-  { label: 2, value: { type: "questionNum", value: 2 } },
-  { label: 3, value: { type: "questionNum", value: 3 } },
-  { label: 4, value: { type: "questionNum", value: 4 } },
-  { label: 5, value: { type: "questionNum", value: 5 } },
-  { label: 6, value: { type: "questionNum", value: 6 } },
-  { label: 7, value: { type: "questionNum", value: 7 } },
-  { label: 8, value: { type: "questionNum", value: 8 } },
-  { label: 9, value: { type: "questionNum", value: 9 } },
-  { label: 10, value: { type: "questionNum", value: 10 } },
-  { label: 11, value: { type: "questionNum", value: 11 } },
-  { label: 12, value: { type: "questionNum", value: 12 } },
-  { label: 13, value: { type: "questionNum", value: 13 } },
-  { label: 14, value: { type: "questionNum", value: 14 } },
-  { label: 15, value: { type: "questionNum", value: 15 } },
-  { label: 16, value: { type: "questionNum", value: 16 } },
-  { label: 17, value: { type: "questionNum", value: 17 } },
-  { label: 18, value: { type: "questionNum", value: 18 } },
-  { label: 19, value: { type: "questionNum", value: 19 } },
-  { label: 20, value: { type: "questionNum", value: 20 } },
-  { label: 21, value: { type: "questionNum", value: 21 } },
-  { label: 22, value: { type: "questionNum", value: 22 } },
-  { label: 23, value: { type: "questionNum", value: 23 } },
-  { label: 24, value: { type: "questionNum", value: 24 } },
-  { label: 25, value: { type: "questionNum", value: 25 } },
-];
+export const numberOfQuestion = () => {
+  let numberArray = Array.from(Array(10).keys());
+  console.log("num array: ", numberArray);
+  return numberArray;
+};
 
 export const questionDifficulty = [
   {

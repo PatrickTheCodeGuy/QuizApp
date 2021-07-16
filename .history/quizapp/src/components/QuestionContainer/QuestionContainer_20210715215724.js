@@ -31,13 +31,13 @@ function QuestionContainer(props) {
 
   const setNextQuestion = useCallback(
     (newScore, answeredCorrectly) => {
-      setScore(newScore);
       if (apiHasLoaded && currentIndex + 1 >= questions.length) {
         history.push({
           pathname: "/gameover",
-          state: { score: newScore },
+          state: { score: score },
         });
       } else {
+        setScore(newScore);
         setCurrentIndex(currentIndex + 1);
       }
       // Use currentIndex to get the updated memoized state(is updated in hook), else we would never get updated state.

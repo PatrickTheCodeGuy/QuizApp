@@ -21,7 +21,6 @@ function GameInfo() {
   // Modal hook
   const [modalIsOpen, setModalIsOpen] = useState(false);
   let [timeDifficulty, setTimeDifficulty] = useState(1.0);
-  let [questionsNum, setQuestionsNum] = useState(10);
   let [questionDifficultyState, setQuestionDifficulty] = useState(1.0);
   let [categoryId, setCategoryId] = useState(0);
   let [multiplier, setMultiplier] = useState(1.0);
@@ -48,9 +47,6 @@ function GameInfo() {
     }
     if (e.value.type === "Difficulty") {
       setQuestionDifficulty(e.value);
-    }
-    if (e.value.type === "questionNum") {
-      setQuestionsNum(e.value.value);
     }
     if (Number.isInteger(e.value)) {
       setCategoryId(e.value);
@@ -169,7 +165,6 @@ function GameInfo() {
               multiplier: multiplier,
               timeDifficulty: timeDifficulty,
               categoryId: categoryId,
-              questionNum: questionsNum,
               questionDifficultyState: questionDifficultyState,
             },
           }}

@@ -11,6 +11,7 @@ function QuestionComponent(props) {
   let [isDisabled, setIsDisabled] = useState(false);
   let [isCorrect, setIsCorrect] = useState(0);
   let [multiplier, setMultiplier] = useState(parseFloat(props.multiplier));
+  console.log("props: ", props);
   // Spread in the incorrect answers with the correct answer on init.
   let [answers, setAnswers] = useState(
     shuffleArray(replaceSpecialCharacters([...props.incorrect, props.answer]))
@@ -36,10 +37,7 @@ function QuestionComponent(props) {
   function timeout(answer, delay) {
     return new Promise((res) =>
       setTimeout(() => {
-        if (
-          replaceSpecialCharacters(answer) ===
-          replaceSpecialCharacters(props.answer)
-        ) {
+        if (answer === replaceSpecialCharacters(props.answer)) {
           let newScore = props.score + 100 * multiplier;
           props.setNextQuestion(newScore, 1);
         } else {

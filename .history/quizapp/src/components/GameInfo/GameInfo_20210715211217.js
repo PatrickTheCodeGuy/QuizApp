@@ -14,14 +14,12 @@ import {
   timerOptions,
   questionDifficulty,
   questionType,
-  numberOfQuestion,
 } from "./settings-data";
 
 function GameInfo() {
   // Modal hook
   const [modalIsOpen, setModalIsOpen] = useState(false);
   let [timeDifficulty, setTimeDifficulty] = useState(1.0);
-  let [questionsNum, setQuestionsNum] = useState(10);
   let [questionDifficultyState, setQuestionDifficulty] = useState(1.0);
   let [categoryId, setCategoryId] = useState(0);
   let [multiplier, setMultiplier] = useState(1.0);
@@ -33,8 +31,7 @@ function GameInfo() {
     if (!firstRender) {
       // Grab average multiplier
       let tempMultiplier = (
-        (parseFloat(timeDifficulty.multiplier) +
-          parseFloat(questionDifficultyState.multiplier)) /
+        (parseFloat(timeDifficulty) + parseFloat(questionDifficultyState)) /
         2
       ).toFixed(2);
       // Set multiplier
@@ -44,13 +41,10 @@ function GameInfo() {
 
   function onSelect(e) {
     if (e.value.type === "Time") {
-      setTimeDifficulty(e.value);
+      setTimeDifficulty(e.value.multiplier);
     }
     if (e.value.type === "Difficulty") {
-      setQuestionDifficulty(e.value);
-    }
-    if (e.value.type === "questionNum") {
-      setQuestionsNum(e.value.value);
+      setQuestionDifficulty(e.value.multiplier);
     }
     if (Number.isInteger(e.value)) {
       setCategoryId(e.value);
@@ -122,17 +116,6 @@ function GameInfo() {
                 />
               </div>
               <div>
-                <p className="options-text">Select Amount of Questions:</p>
-                <Dropdown
-                  arrowClassName="arrowBlack"
-                  className="overrideDropdown"
-                  options={numberOfQuestion}
-                  onChange={onSelect}
-                  value={numberOfQuestion[9]}
-                  placeholder="Category Select"
-                />
-              </div>
-              <div>
                 <p className="options-text">Select Timer Options</p>
                 <Dropdown
                   arrowClassName="arrowBlack"
@@ -169,7 +152,6 @@ function GameInfo() {
               multiplier: multiplier,
               timeDifficulty: timeDifficulty,
               categoryId: categoryId,
-              questionNum: questionsNum,
               questionDifficultyState: questionDifficultyState,
             },
           }}

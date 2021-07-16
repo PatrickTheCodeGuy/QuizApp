@@ -17,6 +17,11 @@ function QuestionContainer(props) {
 
   useEffect((props) => {
     async function setData() {
+      console.log("props: ", propsData);
+      console.log(
+        "Difficulty: ",
+        propsData["questionDifficultyState"]["difficulty"]
+      );
       let url = `https://opentdb.com/api.php?amount=${propsData.questionNum}&category=${propsData.categoryId}&difficulty=${propsData["questionDifficultyState"]["difficulty"]}`;
 
       const response = await fetch(url);
@@ -31,13 +36,13 @@ function QuestionContainer(props) {
 
   const setNextQuestion = useCallback(
     (newScore, answeredCorrectly) => {
-      setScore(newScore);
       if (apiHasLoaded && currentIndex + 1 >= questions.length) {
         history.push({
           pathname: "/gameover",
-          state: { score: newScore },
+          state: { score: score },
         });
       } else {
+        setScore(newScore);
         setCurrentIndex(currentIndex + 1);
       }
       // Use currentIndex to get the updated memoized state(is updated in hook), else we would never get updated state.
@@ -60,7 +65,6 @@ function QuestionContainer(props) {
           setNextQuestion={setNextQuestion}
           setScore={setScore}
           score={score}
-          multiplier={propsData.multiplier}
           setAnswered={setAnswered}
           answered={answered}
           answer={questions[currentIndex]["correct_answer"]}

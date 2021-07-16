@@ -50,6 +50,7 @@ function GameInfo() {
       setQuestionDifficulty(e.value);
     }
     if (e.value.type === "questionNum") {
+      console.log("e", e);
       setQuestionsNum(e.value.value);
     }
     if (Number.isInteger(e.value)) {
@@ -169,7 +170,6 @@ function GameInfo() {
               multiplier: multiplier,
               timeDifficulty: timeDifficulty,
               categoryId: categoryId,
-              questionNum: questionsNum,
               questionDifficultyState: questionDifficultyState,
             },
           }}
