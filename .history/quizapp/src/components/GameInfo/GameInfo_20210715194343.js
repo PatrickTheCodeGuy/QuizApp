@@ -27,14 +27,20 @@ function GameInfo() {
   const firstRender = useFirstRender();
 
   useEffect(() => {
-    // use custom hook to check if first render
+    if (firstRender) {
+      let initialDifficulty =
+        (parseFloat(timeDifficulty) * parseFloat(questionDifficultyState)) / 1;
+      setMultiplier(initialDifficulty);
+    }
+  }, []);
+
+  useEffect(() => {
     if (!firstRender) {
       // Grab average multiplier
       let tempMultiplier = (
         (parseFloat(timeDifficulty) + parseFloat(questionDifficultyState)) /
         2
       ).toFixed(2);
-      // Set multiplier
       setMultiplier(tempMultiplier);
     }
   }, [timeDifficulty, questionDifficultyState]);
@@ -51,13 +57,15 @@ function GameInfo() {
     }
   }
 
+  // Modal open close logic
+
   // Fix for screen readers getting an error on modal mount
   Modal.setAppElement("#root");
 
-  // Modal open close logic
   function openModal() {
     setModalIsOpen(true);
   }
+
   function closeModal() {
     setModalIsOpen(false);
   }

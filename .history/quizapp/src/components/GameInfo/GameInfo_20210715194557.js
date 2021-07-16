@@ -61,7 +61,6 @@ function GameInfo() {
   function closeModal() {
     setModalIsOpen(false);
   }
-
   return (
     <div className="gameInfo-container">
       <div className="gameInfo-header">

@@ -6,13 +6,13 @@ export const timerOptions = [
   },
   {
     key: 1,
-    label: "8 seconds (1.8x)",
-    value: { type: "Time", time: 8, multiplier: 1.8 },
+    label: "8 seconds (3.5x)",
+    value: { type: "Time", time: 8, multiplier: 3.5 },
   },
   {
     key: 2,
-    label: "6 seconds (3.8x)",
-    value: { type: "Time", time: 6, multiplier: 3.8 },
+    label: "5 seconds (4.2x)",
+    value: { type: "Time", time: 5, multiplier: 4.2 },
   },
   {
     key: 3,

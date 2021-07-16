@@ -58,6 +58,7 @@ function GameInfo() {
   function openModal() {
     setModalIsOpen(true);
   }
+
   function closeModal() {
     setModalIsOpen(false);
   }
