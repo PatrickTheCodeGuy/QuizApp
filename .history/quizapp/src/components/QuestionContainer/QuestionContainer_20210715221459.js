@@ -23,7 +23,7 @@ function QuestionContainer(props) {
         propsData.categoryId === 0 &&
         propsData["questionDifficultyState"]["difficulty"] === undefined
       ) {
-        url = `https://opentdb.com/api.php?amount=${propsData.questionNum}`;
+        url = `https://opentdb.com/api.php?amount=${propsData.questionNum}}`;
       } else if (
         propsData["questionDifficultyState"]["difficulty"] === undefined &&
         propsData.categoryId !== 0
@@ -65,9 +65,6 @@ function QuestionContainer(props) {
         <div>
           <h3>Score: {score}</h3>
           <h2 className={"addScore "}>+{100 * scoreMultiplier}</h2>
-          <p className="multiplier-text-main">
-            Score Multiplier: {propsData.multiplier}x
-          </p>
         </div>
       ) : null}
       {apiHasLoaded ? (

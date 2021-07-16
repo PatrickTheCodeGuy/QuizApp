@@ -66,7 +66,7 @@ function QuestionContainer(props) {
           <h3>Score: {score}</h3>
           <h2 className={"addScore "}>+{100 * scoreMultiplier}</h2>
           <p className="multiplier-text-main">
-            Score Multiplier: {propsData.multiplier}x
+            Score Multiplier: {propsData.multiplier}
           </p>
         </div>
       ) : null}
