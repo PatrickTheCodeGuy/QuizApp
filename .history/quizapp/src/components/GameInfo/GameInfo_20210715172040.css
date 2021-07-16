@@ -18,16 +18,6 @@
   color: rgba(26, 26, 26, 0.749);
   transform: translateY(2px);
 }
-.exit-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1em;
-}
-.exit-icon:hover {
-  cursor: pointer;
-  color: rgba(26, 26, 26, 0.749);
-}
 
 .settings-title {
   font-family: "Press Start 2P", cursive;
@@ -35,32 +25,9 @@
 
 .score-multiplier-display {
   font-family: "Press Start 2P", bold;
-  margin-top: 15%;
+  margin-top: 3%;
 }
 
-.overrideDropdown {
-  border: 3px groove black;
-  font-family: "Press Start 2P", cursive;
-}
-.Dropdown-arrow.arrowBlack {
-  color: black;
-  border-color: #000 transparent transparent;
-}
-.Dropdown-option {
-  box-sizing: border-box;
-  color: rgb(51 51 51);
-  cursor: pointer;
-  display: block;
-  padding: 10px 10px;
-  border: 1px solid black;
-}
-.Dropdown-option:hover {
-  background-color: #e73c7e !important;
-}
-.Dropdown-option.is-selected {
-  background-color: #51ffff !important;
-  color: #000 !important;
-}
 .modal-button {
   border: none;
   width: 45px;
@@ -110,24 +77,4 @@
   flex-direction: column-reverse;
   justify-content: space-evenly;
   height: 25em;
-}
-
-.setting-button {
-  background-color: white;
-  cursor: pointer;
-  border: none;
-  margin: 0.5em 0.5em 0 0;
-}
-.setting-icon:hover {
-  color: rgba(32, 32, 32, 0.575);
-  transform: translateY(2px);
-}
-.options-text {
-  font-family: "Press Start 2P", cursive;
-}
-
-.multiplier-text {
-  color: #e73c7e;
-  margin-top: 8%;
-  font-size: 25px;
 }

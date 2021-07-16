@@ -124,6 +124,7 @@
 }
 .options-text {
   font-family: "Press Start 2P", cursive;
+  text-decoration: underline;
 }
 
 .multiplier-text {

@@ -113,12 +113,7 @@ function GameInfo() {
               <h1>Settings</h1>
             </div>
             <div className="score-multiplier-display">
-              <p>
-                Current Score Multiplier: <br />
-              </p>
-              <p className="multiplier-text">
-                <span>{multiplier}x</span>
-              </p>
+              <p>Current Score Multiplier: {multiplier}x</p>
             </div>
             <div className="settings-options">
               <div>

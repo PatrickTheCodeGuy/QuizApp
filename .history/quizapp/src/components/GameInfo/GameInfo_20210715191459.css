@@ -124,10 +124,9 @@
 }
 .options-text {
   font-family: "Press Start 2P", cursive;
+  text-decoration: underline;
 }
 
 .multiplier-text {
-  color: #e73c7e;
-  margin-top: 8%;
-  font-size: 25px;
+  color: red;
 }

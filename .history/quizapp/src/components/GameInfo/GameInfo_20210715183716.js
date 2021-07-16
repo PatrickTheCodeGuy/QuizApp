@@ -6,7 +6,6 @@ import { ImArrowLeft, ImCross } from "react-icons/im";
 import Modal from "react-modal";
 import Dropdown from "react-dropdown";
 import { useFirstRender } from "./customHook";
-import { BiCog } from "react-icons/bi";
 
 // Import static data
 import {
@@ -21,7 +20,6 @@ function GameInfo() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   let [timeDifficulty, setTimeDifficulty] = useState(1.0);
   let [questionDifficultyState, setQuestionDifficulty] = useState(1.0);
-  let [categoryId, setCategoryId] = useState(0);
   let [multiplier, setMultiplier] = useState(1.0);
 
   const firstRender = useFirstRender();
@@ -61,6 +59,7 @@ function GameInfo() {
         (parseFloat(timeDifficulty) + parseFloat(questionDifficultyState)) /
         2
       ).toFixed(2);
+      console.log("temp multiplier: ", tempMultiplier);
       setMultiplier(tempMultiplier);
     }
   }, [timeDifficulty, questionDifficultyState]);
@@ -69,12 +68,7 @@ function GameInfo() {
     if (e.value.type === "Time") {
       setTimeDifficulty(e.value.multiplier);
     }
-    if (e.value.type === "Difficulty") {
-      setQuestionDifficulty(e.value.multiplier);
-    }
-    if (Number.isInteger(e.value)) {
-      setCategoryId(e.value);
-    }
+    setQuestionDifficulty(e.value.multiplier);
   }
 
   // Modal open close logic
@@ -96,9 +90,7 @@ function GameInfo() {
         <Link className="back-button" to="/">
           <ImArrowLeft className="back-arrow" size={64} />
         </Link>
-        <button className="setting-button" onClick={openModal}>
-          <BiCog className="setting-icon" size={64} />
-        </button>
+        <button onClick={openModal}>Settings</button>
         <Modal
           contentLabel="Settings"
           onRequestClose={() => setModalIsOpen(false)}
@@ -113,16 +105,11 @@ function GameInfo() {
               <h1>Settings</h1>
             </div>
             <div className="score-multiplier-display">
-              <p>
-                Current Score Multiplier: <br />
-              </p>
-              <p className="multiplier-text">
-                <span>{multiplier}x</span>
-              </p>
+              <p>Current Score Multiplier: {multiplier}x</p>
             </div>
             <div className="settings-options">
               <div>
-                <p className="options-text">Select Question Type</p>
+                <p>Select Question Type</p>
                 <Dropdown
                   arrowClassName="arrowBlack"
                   className="overrideDropdown"
@@ -133,7 +120,7 @@ function GameInfo() {
                 />
               </div>
               <div>
-                <p className="options-text">Select Question Difficulty</p>
+                <p>Select Question Difficulty</p>
                 <Dropdown
                   arrowClassName="arrowBlack"
                   className="overrideDropdown"
@@ -144,7 +131,7 @@ function GameInfo() {
                 />
               </div>
               <div>
-                <p className="options-text">Select Timer Options</p>
+                <p>Select Timer Options</p>
                 <Dropdown
                   arrowClassName="arrowBlack"
                   className="overrideDropdown"

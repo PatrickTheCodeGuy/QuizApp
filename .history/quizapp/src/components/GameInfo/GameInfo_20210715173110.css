@@ -18,16 +18,6 @@
   color: rgba(26, 26, 26, 0.749);
   transform: translateY(2px);
 }
-.exit-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1em;
-}
-.exit-icon:hover {
-  cursor: pointer;
-  color: rgba(26, 26, 26, 0.749);
-}
 
 .settings-title {
   font-family: "Press Start 2P", cursive;
@@ -55,11 +45,11 @@
   border: 1px solid black;
 }
 .Dropdown-option:hover {
-  background-color: #e73c7e !important;
+  background-color: black;
 }
 .Dropdown-option.is-selected {
-  background-color: #51ffff !important;
-  color: #000 !important;
+  background-color: #51ffff;
+  color: #000;
 }
 .modal-button {
   border: none;
@@ -110,24 +100,4 @@
   flex-direction: column-reverse;
   justify-content: space-evenly;
   height: 25em;
-}
-
-.setting-button {
-  background-color: white;
-  cursor: pointer;
-  border: none;
-  margin: 0.5em 0.5em 0 0;
-}
-.setting-icon:hover {
-  color: rgba(32, 32, 32, 0.575);
-  transform: translateY(2px);
-}
-.options-text {
-  font-family: "Press Start 2P", cursive;
-}
-
-.multiplier-text {
-  color: #e73c7e;
-  margin-top: 8%;
-  font-size: 25px;
 }

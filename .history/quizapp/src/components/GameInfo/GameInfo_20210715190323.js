@@ -96,8 +96,8 @@ function GameInfo() {
         <Link className="back-button" to="/">
           <ImArrowLeft className="back-arrow" size={64} />
         </Link>
-        <button className="setting-button" onClick={openModal}>
-          <BiCog className="setting-icon" size={64} />
+        <button onClick={openModal}>
+          <BiCog size={64} />
         </button>
         <Modal
           contentLabel="Settings"
@@ -113,16 +113,11 @@ function GameInfo() {
               <h1>Settings</h1>
             </div>
             <div className="score-multiplier-display">
-              <p>
-                Current Score Multiplier: <br />
-              </p>
-              <p className="multiplier-text">
-                <span>{multiplier}x</span>
-              </p>
+              <p>Current Score Multiplier: {multiplier}x</p>
             </div>
             <div className="settings-options">
               <div>
-                <p className="options-text">Select Question Type</p>
+                <p>Select Question Type</p>
                 <Dropdown
                   arrowClassName="arrowBlack"
                   className="overrideDropdown"
@@ -133,7 +128,7 @@ function GameInfo() {
                 />
               </div>
               <div>
-                <p className="options-text">Select Question Difficulty</p>
+                <p>Select Question Difficulty</p>
                 <Dropdown
                   arrowClassName="arrowBlack"
                   className="overrideDropdown"
@@ -144,7 +139,7 @@ function GameInfo() {
                 />
               </div>
               <div>
-                <p className="options-text">Select Timer Options</p>
+                <p>Select Timer Options</p>
                 <Dropdown
                   arrowClassName="arrowBlack"
                   className="overrideDropdown"
